@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bora & Sreyroth - Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Freehand&family=Kantumruy+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #c5a059;
+            --dark-gold: #a38245;
+            --light-gold: #e8d0a0;
+            --soft-white: #fdfbf7;
+            --glass: rgba(255, 255, 255, 0.85);
+            --text-dark: #2c2c2c;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Kantumruy Pro', sans-serif;
+            background-color: var(--soft-white);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Fixed Background Image Layer */
+        /* Fixed Background Image Layer */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            /* UPDATE THE LINE BELOW WITH YOUR IMAGE FILENAME (e.g., bg-photo.jpg) */
+            background: url('photo2.jpg') no-repeat center center;
+            background-size: cover;
+            opacity: 0.6; /* Controls how visible the background photo is */
+            filter: blur(3px); /* Adds a soft blur so text stays clear */
+            z-index: -1;
+        }
+        }
+
+        .heart {
+            position: fixed;
+            font-size: 10px;
+            color: rgba(197, 160, 89, 0.3);
+            pointer-events: none;
+            z-index: 1;
+            user-select: none;
+        }
+
+        section {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+            position: relative;
+        }
+
+        #hero { 
+            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), 
+                        url('image7.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+        }
+/* Responsive adjustments for mobile */
+/* The Container Box */
+.map-box-container {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 380px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(197, 160, 89, 0.2); /* Soft Gold Border */
+}
+
+.map-label {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: #c5a059;
+    font-weight: 700;
+}
+
+.map-title {
+    font-size: 1.2rem;
+    margin: 8px 0 15px 0;
+    color: #1a2a44;
+}
+
+.map-details {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* The Button */
+.btn-map-perfect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #1a2a44; /* Dark Navy */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.btn-map-perfect:hover {
+    background: #c5a059; /* Switches to Gold on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
+}
+
+.map-icon {
+    display: flex;
+    align-items: center;
+}
+
+/* Mobile Tweak */
+@media (max-width: 480px) {
+    .map-box-container {
+        max-width: 90%;
+        padding: 20px 15px;
+    }
+    
+    .btn-map-perfect {
+        width: 100%;
+    }
+}
+/* Add a small caption below the button */
+.map-caption {
+    display: block;
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 10px;
+}
+
+    .btn-map-formal .icon {
+        font-size: 1rem;
+        margin-right: 5px;
+    }
+}
+}
+
+.btn-map-formal:hover {
+    background-color: #ffffff;
+    color: #1a2a44;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.btn-map-formal .icon {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+        #hero h1 { 
+            font-size: 2.8rem; 
+            margin: 15px 0; 
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            animation: fadeInScale 2s ease-out;
+        }
+
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 40px 25px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            width: 100%;
+            max-width: 380px;
+            text-align: center;
+        }
+
+        .gallery-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 15px; 
+            max-width: 380px;
+            width: 100%;
+        }
+        
+        .gallery-grid img { 
+            width: 100%; 
+            aspect-ratio: 1 / 1; 
+            object-fit: cover; 
+            border-radius: 20px;
+            border: 6px solid var(--gold);
+            box-shadow: 0 10px 25px rgba(197, 160, 89, 0.2);
+            transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-grid img:hover { 
+            transform: translateY(-8px) scale(1.03); 
+            border-color: var(--light-gold);
+            box-shadow: 0 15px 35px rgba(197, 160, 89, 0.4);
+        }
+
+        .countdown-container { display: flex; justify-content: center; gap: 10px; margin: 25px 0; }
+        .time-box { 
+            background: white; 
+            padding: 12px; border-radius: 15px; 
+            min-width: 70px; 
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.15);
+        }
+        .time-box span { display: block; color: var(--gold); font-size: 1.5rem; font-weight: bold; }
+        .time-box label { font-size: 0.65rem; color: #888; letter-spacing: 1px; }
+
+        .timeline {
+            border-left: 2px dashed var(--gold);
+            margin: 20px 0;
+            padding-left: 30px;
+            text-align: left;
+        }
+        .timeline-item { position: relative; margin-bottom: 30px; }
+        .timeline-item::before {
+            content: '❤';
+            position: absolute; left: -39px; top: -5px;
+            background: var(--soft-white); color: var(--gold);
+            padding: 5px; font-size: 12px;
+        }
+
+        .currency-toggle {
+            display: flex;
+            background: #eee;
+            padding: 5px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            width: fit-content;
+        }
+        .currency-toggle span {
+            padding: 8px 20px;
+            cursor: pointer;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .currency-toggle span.active {
+            background: var(--gold);
+            color: white;
+        }
+
+        .qr-display-box {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 0.5s ease;
+        }
+        .qr-display-box.active { display: flex; }
+
+        .wish-input {
+            width: 100%; padding: 12px; margin-bottom: 10px; 
+            border-radius: 10px; border: 1px solid #ddd; 
+            outline: none; font-family: 'Kantumruy Pro';
+        }
+        .wish-btn {
+            width: 100%; padding: 12px; background: var(--gold); 
+            color: white; border: none; border-radius: 10px; 
+            font-weight: bold; cursor: pointer;
+        }
+
+        .btn-map {
+            background: linear-gradient(135deg, #a38245 0%, #c5a059 100%);
+            color: white; text-decoration: none;
+            padding: 15px 35px; border-radius: 50px;
+            font-weight: bold; display: inline-block;
+            margin-top: 25px;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating { animation: floating 3s ease-in-out infinite; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        <style>
+    /* ... existing styles ... */
+
+    /* Butterfly Animation */
+    .butterfly {
+        position: fixed;
+        width: 20px;
+        height: 20px;
+        pointer-events: none;
+        z-index: 2;
+        background: url('https://cdn-icons-png.flaticon.com/512/1045/1045437.png') no-repeat center center/contain;
+        filter: sepia(0.5) hue-rotate(10deg) saturate(2); /* Matches your gold theme */
+    }
+
+    @keyframes fly {
+        0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translate(var(--end-x), var(--end-y)) rotate(360deg); opacity: 0; }
+    }
+
+    /* Heart Animation Update */
+    .heart {
+        position: fixed;
+        font-size: 15px;
+        color: rgba(197, 160, 89, 0.4);
+        pointer-events: none;
+        z-index: 1;
+        user-select: none;
+    }
+
+    @keyframes heartFloat {
+        0% { transform: translateY(100vh) scale(0.5) rotate(0deg); opacity: 0; }
+        20% { opacity: 0.6; }
+        80% { opacity: 0.6; }
+        100% { transform: translateY(-10vh) scale(1.5) rotate(45deg); opacity: 0; }
+    }
+</style>
+
+<script>
+    // ... your existing AOS and Currency functions ...
+
+    function createFloatingElements() {
+        const container = document.body;
+        
+        // Create Butterflies
+        setInterval(() => {
+            const b = document.createElement('div');
+            b.className = 'butterfly';
+            
+            // Start positions
+            const startX = Math.random() * window.innerWidth;
+            b.style.left = startX + 'px';
+            b.style.top = window.innerHeight + 50 + 'px';
+            
+            // Random movement paths
+            const endX = (Math.random() - 0.5) * 500; // Move left or right
+            const endY = -(window.innerHeight + 100);
+            b.style.setProperty('--end-x', `${endX}px`);
+            b.style.setProperty('--end-y', `${endY}px`);
+            
+            b.style.animation = `fly ${10 + Math.random() * 10}s linear forwards`;
+            
+            container.appendChild(b);
+            setTimeout(() => b.remove(), 20000);
+        }, 3000);
+
+        // Create Hearts
+        setInterval(() => {
+            const h = document.createElement('div');
+            h.className = 'heart';
+            h.innerHTML = '❤';
+            h.style.left = Math.random() * 100 + 'vw';
+            h.style.animation = `heartFloat ${8 + Math.random() * 10}s linear forwards`;
+            
+            container.appendChild(h);
+            setTimeout(() => h.remove(), 18000);
+        }, 2000);
+    }
+
+    // Initialize animations when page loads
+    window.addEventListener('DOMContentLoaded', createFloatingElements);
+</script>
+    </style>
+</head>
+<body>
+    <audio id="inviteMusic" src="zmusic.mp3" preload="auto" loop></audio>
+
+    <div id="particles"></div>
+
+    <section id="hero">
+        <div data-aos="fade-up" data-aos-duration="1500">
+            <p style="letter-spacing: 5px; text-transform: uppercase; font-size: 1.5rem; color:#c5a059">The Enagement Day</p><br>
+            <h1 style="font-family: 'Kantumruy Pro', sans-serif; font-weight: 700; font-size: 2.8rem; background: linear-gradient(to bottom, #e8d0a0, #c5a059, #a38245); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+    សុន បូរ៉ា & លី ស្រីរ៉េត</h1>
+            <p style="font-family: 'Freehand', cursive; font-size: 1.8rem; opacity: 0.9;color:#a38245">Save The Date</p>
+            <div style="margin-top: 30px; font-weight: 300;">
+                <p>ថ្ងៃសៅរ៏ ០៩កើត​ ខែស្រាពណ៏ ឆ្នំមមី អដ្ធស័ក ពុទ្ធស៍ករាជ២៥៧០ <Br><Br>
+                    ត្រូវនឹងថ្ងៃទី២២ ខែសីហា ឆ្នាំ២០២៦។</p> <br>
+                      <p>វេលាម៉ោង៨:០០ព្រឹក</p>  <br>
+                <p>📍 ភូមិ១ សង្កាត់១ ក្រុងព្រះសីហនុ</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section>
+        <div class="card" data-aos="fade-up">
+            <p style="color: var(--gold); letter-spacing: 2px; margin-bottom: 10px;">គោរពអញ្ជើញ</p>
+            <h2 style="font-size: 1.4rem; margin-bottom: 20px;">ឯកឧត្តម លោកឧកញ៉ា លោកជំទាវ លោក លោកស្រី</h2>
+            <p style="font-size: 0.9rem; line-height: 1.8; color: #666; padding: 0 10px;">
+            អញ្ជើញជាអធិបតីនិងជាភ្ញៀវកត្តិយស​ដើម្បីប្រសិទ្ធពរសិរីសួស្តី ជ័យមង្គល ក្នុងពិធីសិរីសួស្តីពិសារស្លាដកកន្សែងរបស់ក្រុមគ្រួសារយើងខ្ញុំទាំងពីរ។
+            </p><br>
+            <p style="font-weight: bold; color: var(--dark-gold);">ពេលវេលាដែលពួកយើងរងចាំ</p>
+            <div class="countdown-container">
+                <div class="time-box"><span id="days">00</span><label>Days</label></div>
+                <div class="time-box"><span id="hours">00</span><label>Hrs</label></div>
+                <div class="time-box"><span id="mins">00</span><label>Min</label></div>
+                <div class="time-box"><span id="secs">00</span><label>Sec</label></div>
+            </div>
+            <p style="font-weight: bold; color: var(--dark-gold);">ទទួលភ្ញៀវកត្តិយសចូលរួម និងពិសារភោជនីអាហារចាប់ពីម៉ោង ៩:៣០ ព្រឹក​តទៅ។</p>
+        </div>
+    </section>
+
+    <section id="program">
+        <h2 data-aos="fade-down" style="color: var(--gold); margin-bottom: 30px; font-size: 2rem; font-family: 'Freehand', cursive;">Program Details</h2>
+        
+        <div class="card">
+            <h3 style="color: var(--dark-gold); font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 15px;">ថ្ងៃទី ២២ សីហា ២០២៦ </h3>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+                    <p style="font-weight: bold; color: var(--gold);">៨:០០ព្រឹក</p>
+
+                    <p>ជួបជុំបងប្អូន</p>
+                </div>
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+                    <p style="font-weight: bold; color: var(--gold);">០៨:៣០ ព្រឹក</p>
+                    <p>ចាស់ទុំជជែកជើងការ និងបង្ហាញជំ​នួន​</p>
+                </div>
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
+                    <p style="font-weight: bold; color: var(--gold);">០៩:១៥ ព្រឹក</p>
+                    <p>ពិធីបំពាក់ជញ្ជៀន</p>
+                </div>
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="400">
+                    <p style="font-weight: bold; color: var(--gold);">១០:០០ ល្ងាច</p>
+                    <p>ពិធីសារភោជនីអាហារ</p>
+                </div>
+            </div>
+        </div>
+
+       
+    </section>
+
+    <section id="gallery">
+        <h2 data-aos="fade-down" style="font-family: 'Freehand', cursive; font-size: 2.5rem; color: var(--gold); margin-bottom: 30px;">Sweet Memories</h2>
+        <div class="gallery-grid">
+            <img src="photo1.jpg" data-aos="zoom-in" data-aos-delay="100">
+            <img src="photo2.jpg" data-aos="zoom-in" data-aos-delay="200">
+            <img src="photo10.jpg" data-aos="zoom-in" data-aos-delay="300">
+            <img src="photo4.jpg" data-aos="zoom-in" data-aos-delay="400">
+            <img src="photo8.jpg" data-aos="zoom-in" data-aos-delay="500">
+            <img src="photo9.jpg" data-aos="zoom-in" data-aos-delay="600">
+            <img src="photo7.jpg" data-aos="zoom-in" data-aos-delay="700">
+            <img src="photo12.jpg" data-aos="zoom-in" data-aos-delay="800">
+        </div>
+    </section>
+
+    
+            <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
+
+            <h3 style="color:#bb9200; margin-bottom: 15px;">ផ្ញើសារជូនពរ / Send Wishes</h3>
+            <input type="text" id="guestName" class="wish-input" placeholder="ឈ្មោះរបស់អ្នក (Your Name)">
+            <textarea id="guestWish" class="wish-input" placeholder="សារជូនពររបស់អ្នក (Your Wishes...)" rows="3" style="resize:none;"></textarea>
+            <button onclick="sendWish()" id="sendBtn" class="wish-btn">ផ្ញើសារជូនពរ / Send Now</button>
+
+            <div style="margin-top: 30px;">
+                <p style="font-family: 'Freehand', cursive; font-size: 2rem; color: var(--gold);"><tr></tr>Thank You</p>
+                <p style="font-size: 0.87rem; color: #bb9200;">វត្តមានដ៏ខ្ពង់ខ្ពស់របស់លោកអ្នកគឺកិត្តិយសយ៉ាងជ្រាវជ្រៅសម្រាបើគ្រួសារយើងខ្ញុំ សូមអរគុណ។</p>
+            </div>
+            
+           <div class="map-box-container" data-aos="zoom-in">
+    <div class="map-header">
+        <span class="map-label">Location Details</span>
+        <h3 class="map-title">ទីតាំងកម្មពិធី</h3>
+    </div>
+    
+    <div class="map-details">
+        <p>📍 ភូមិ១ សង្កាត់១ ក្រុងព្រះសីហនុ</p>
+    </div>
+
+    <a href="https://maps.app.goo.gl/3VWdTSNwSLcA7CJt8" target="_blank" class="btn-map-perfect">
+        <span class="map-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </span>
+        បើកមើលផែនទីទីតាំង
+    </a>
+</div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    window.addEventListener('load', () => {
+        const audio = document.getElementById("inviteMusic");
+        const shouldPlay = localStorage.getItem('musicPlaying');
+
+        if (shouldPlay === 'true') {
+            // Browsers allow this because the user interacted with page 1
+            audio.play().catch(err => {
+                console.log("Autoplay was prevented. Usually requires one more click.");
+            });
+        }
+    });
+</script>
+    <script>
+        AOS.init({ duration: 800, once: false });
+
+        function switchCurrency(type) {
+            document.getElementById('qr-usd').classList.remove('active');
+            document.getElementById('qr-khr').classList.remove('active');
+            document.getElementById('tab-usd').classList.remove('active');
+            document.getElementById('tab-khr').classList.remove('active');
+
+            if(type === 'usd') {
+                document.getElementById('qr-usd').classList.add('active');
+                document.getElementById('tab-usd').classList.add('active');
+            } else {
+                document.getElementById('qr-khr').classList.add('active');
+                document.getElementById('tab-khr').classList.add('active');
+            }
+        }
+
+       async function sendWish() {
+    const name = document.getElementById('guestName').value;
+    const wish = document.getElementById('guestWish').value;
+    const btn = document.getElementById('sendBtn');
+    
+    if (!name || !wish) { 
+        alert("សូមបំពេញឈ្មោះ និងសារជូនពរ!"); 
+        return; 
+    }
+
+    btn.innerText = "កំពុងផ្ញើ..."; 
+    btn.disabled = true;
+
+    // --- CREDENTIALS FIXED ---
+    const token = "8624971293:AAHngLvQ27kKYM7oQyloScXOlxn6Q2ZoCrM"; 
+    const chatId = "1031129158"; 
+
+    const text = `💌 ជូនពរអាពាហ៍ពិពាហ៍\n👤 ពី៖ ${name}\n✨ សារ៖ ${wish}`;
+    
+    // Updated this line to use the lowercase variable names 'token' and 'chatId'
+    const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`;
+
+    try {
+        const response = await fetch(url);
+        if (response.ok) {
+            alert("សារជូនពរត្រូវបានផ្ញើ! អរគុណច្រើន!");
+            document.getElementById('guestName').value = "";
+            document.getElementById('guestWish').value = "";
+        } else {
+            const errorData = await response.json();
+            console.error("Telegram API Error:", errorData);
+            throw new Error("Failed to send");
+        }
+    } catch (e) {
+        alert("មានបញ្ហា! សូមពិនិត្យមើលសេវាអ៊ីនធឺណិតរបស់អ្នក។");
+        console.error(e);
+    } finally {
+        btn.innerText = "ផ្ញើសារជូនពរ / Send Now";
+        btn.disabled = false;
+    }
+}
+
+        function createHearts() {
+            const container = document.getElementById('particles');
+            if(!container) return;
+            for(let i=0; i<15; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = Math.random() * 100 + 'vh';
+                heart.style.animation = `heartDrift ${10 + Math.random()*20}s infinite linear`;
+                heart.style.opacity = Math.random();
+                container.appendChild(heart);
+            }
+        }
+        
+        const style = document.createElement('style');
+        style.innerHTML = `@keyframes heartDrift { 0% { transform: translateY(100vh) scale(1); } 100% { transform: translateY(-10vh) scale(1.5); } }`;
+        document.head.appendChild(style);
+        createHearts();
+
+        const weddingDate = new Date("August 22, 2026 09:30:00").getTime();
+        setInterval(() => {
+            const now = new Date().getTime();
+            const diff = weddingDate - now;
+            if(diff < 0) return;
+            if(document.getElementById("days")) document.getElementById("days").innerText = Math.floor(diff / 86400000).toString().padStart(2, '0');
+            if(document.getElementById("hours")) document.getElementById("hours").innerText = Math.floor((diff % 86400000) / 3600000).toString().padStart(2, '0');
+            if(document.getElementById("mins")) document.getElementById("mins").innerText = Math.floor((diff % 3600000) / 60000).toString().padStart(2, '0');
+            if(document.getElementById("secs")) document.getElementById("secs").innerText = Math.floor((diff % 60000) / 1000).toString().padStart(2, '0');
+        }, 1000);
+    </script>
+</body>
+</html>

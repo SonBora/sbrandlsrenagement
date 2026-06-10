@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Kantumruy Pro', sans-serif;
+            background-color: #fdfaf3;
+            overflow: hidden; /* Prevent scrolling until name is entered */
+        }
+
+        /* --- NEW INPUT OVERLAY STYLES --- */
+        #nameOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fdfaf3;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 20px;
+        }
+
+        #nameOverlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(1.1);
+            filter: blur(15px);
+        }
+
+        .input-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 380px;
+            text-align: center;
+        }
+
+        .input-card h3 {
+            color: #b39556;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+        }
+
+        .name-field {
+            width: 100%;
+            padding: 18px;
+            border-radius: 15px;
+            border: 2px solid #f1e6cf;
+            font-family: 'Kantumruy Pro', sans-serif;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 25px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .name-field:focus { border-color: #c5a667; }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #c5a667, #e2cf95);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            width: 100%;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        /* --- YOUR ORIGINAL STYLES --- */
+        .page-cover {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('photo2.jpg'); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            opacity: 0; /* Hidden until name is entered */
+            transition: opacity 1s ease;
+        }
+
+        .page-cover.visible { opacity: 1; }
+
+        .title { 
+            font-size: 2.2rem; 
+            font-weight: bold; 
+            margin-bottom: 15px; 
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); 
+        }
+
+        .names { 
+            font-size: 2.2rem; 
+            margin-bottom: 10px; 
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+            color: #f1d392;
+        }
+
+        .invite-text { 
+            font-size: 1.2rem; 
+            margin-bottom: 30px; 
+            opacity: 0.9; 
+            letter-spacing: 1px;
+        }
+
+        .divider {
+            width: 80%;
+            max-width: 300px;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .divider::before, .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.6);
+        }
+        .divider-icon { 
+            padding: 0 15px; 
+            font-size: 1.5rem; 
+            color: #ff4d6d;
+            animation: heartbeat 1.5s ease infinite;
+        }
+
+        .guest-name { 
+            font-size: 1.6rem; 
+            margin-bottom: 40px; 
+            font-weight: bold;
+            text-decoration: underline;
+            text-underline-offset: 8px;
+            color: #fff;
+            min-height: 1.6rem;
+        }
+
+        .btn-open {
+            background-color: #c5a667; 
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            animation: pulse-gold 2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(197, 166, 103, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(197, 166, 103, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(197, 166, 103, 0); }
+        }
+    </style>
+</head>
+<body>
+    <div id="nameOverlay">
+        <div class="input-card">
+            <h3>សូមបញ្ចូលឈ្មោះរបស់អ្នក</h3>
+            <input type="text" id="nameInput" class="name-field" placeholder="ឈ្មោះភ្ញៀវកិត្តិយស..." autofocus>
+            <button class="submit-btn" onclick="startInvitation()">បញ្ជូន</button>
+        </div>
+    </div>
+    <audio id="inviteMusic" src="zmusic.mp3" preload="auto" loop></audio>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // ... (Keep your existing startInvitation and AOS code) ...
+
+        function playMusic(event) {
+            // This tells the browser to remember that music should be playing
+            localStorage.setItem('musicPlaying', 'true');
+            
+            // Note: We don't use event.preventDefault() 
+            // because we want the browser to continue to index2.html
+        }
+    </script>
+</body>
+
+    <section class="page-cover" id="mainInvitation">
+        <div data-aos="fade-down" data-aos-duration="1500">
+            <h1 class="title">សិរីសួស្តីពិធីពិសារស្លាដកកន្សែង</h1>
+        </div>
+
+        <div data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="300">
+            <h2 class="names">សុន បូរ៉ា & លី ស្រីរ៉េត</h2>
+        </div>
+
+        <p class="invite-text" data-aos="fade-up" data-aos-delay="600">សូមគោរពអញ្ជើញ</p>
+
+        <div class="divider" data-aos="stretch-x" data-aos-delay="800">
+            <span class="divider-icon">♥</span>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="1000">
+            <p class="guest-name" id="displayGuestName">ភ្ញៀវកិត្តិយស</p>
+        </div>
+
+        <div class="divider" data-aos="stretch-x" data-aos-delay="800">
+            <span class="divider-icon">♥</span>
+        </div>
+
+        <div data-aos="zoom-up" data-aos-delay="1300">
+    <a href="index2.html" id="openBtn" class="btn-open" onclick="playMusic(event)">
+        <span class="envelope-icon">✉</span> បើកធៀប
+    </a>
+</div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Start AOS but don't play animations until overlay is closed
+        AOS.init({ once: true });
+
+        function startInvitation() {
+            const nameInput = document.getElementById('nameInput');
+            const nameValue = nameInput.value;
+            const overlay = document.getElementById('nameOverlay');
+            const invitation = document.getElementById('mainInvitation');
+            const display = document.getElementById('displayGuestName');
+
+            if (nameValue.trim() !== "") {
+                // 1. Set the name
+                display.innerText = nameValue;
+                
+                // 2. Hide overlay with animation
+                overlay.classList.add('hidden');
+                
+                // 3. Make invitation visible
+                invitation.classList.add('visible');
+                
+                // 4. Enable body scrolling
+                document.body.style.overflow = "auto";
+
+                // 5. Trigger/Refresh AOS animations now that they are visible
+                setTimeout(() => {
+                    AOS.refresh();
+                }, 400);
+            } else {
+                alert("សូមមេត្តាបញ្ចូលឈ្មោះរបស់អ្នក!");
+            }
+        }
+
+        // Support "Enter" key
+        document.getElementById("nameInput").addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                startInvitation();
+            }
+        });
+    </script>
+</body>
+</html>
